@@ -13,10 +13,10 @@ class Boat
   end
 
   def add_hour
-    @hours_rented += 1 if !@return
+    @hours_rented += 1 if !@return && @hours_rented < 3
   end
 
   def returned
-    @return = true 
+    @return = true
   end
 end

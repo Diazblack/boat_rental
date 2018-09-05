@@ -25,4 +25,12 @@ class Dock
   def return(boat)
     boat.returned
   end
+
+  def revenue
+    money = 0
+    @dock_transactions.each do |data|
+      money += data.first.hours_rented * data.first.price_per_hour
+    end
+    money
+  end
 end
