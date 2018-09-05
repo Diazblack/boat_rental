@@ -2,16 +2,21 @@ class Boat
   attr_reader :type,
               :price_per_hour,
               :hours_rented,
+              :return
 
   def initialize(type, price_per_hour)
     @type = type
     @price_per_hour = price_per_hour
     @hours_rented = 0
-    @returned = false
+    @return = false
+
   end
 
   def add_hour
-    @hours_rented += 1
+    @hours_rented += 1 if !@return
   end
 
+  def returned
+    @return = true 
+  end
 end

@@ -63,6 +63,11 @@ class BoatTest < Minitest::Test
     dock.return(kayak_2)
     dock.return(canoe)
 
+    assert_equal true, kayak_1.return
+    assert_equal true, kayak_2.return
+    assert_equal true, canoe.return
+
+
   end
 
   def test_if_it_can_charge_no_more_then_max_rental_time

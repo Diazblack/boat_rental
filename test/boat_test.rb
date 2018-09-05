@@ -10,7 +10,7 @@ class BoatTest < Minitest::Test
     assert_instance_of Boat, kayak
   end
 
-  def test_if_it_has_attributes
+  def test_if_it_has_attribute
     kayak = Boat.new(:kayak , 20)
 
     assert_equal :kayak, kayak.type
@@ -34,4 +34,18 @@ class BoatTest < Minitest::Test
 
     assert_equal 3, kayak.hours_rented
   end
+
+  def test_if_a_boat_can_be_returned
+    kayak = Boat.new(:kayak , 20)
+
+    assert_equal 0 , kayak.hours_rented
+    kayak.add_hour
+    kayak.add_hour
+    kayak.add_hour
+    kayak.returned
+
+    assert_equal true, kayak.return
+
+  end
+
 end

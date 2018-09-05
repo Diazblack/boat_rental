@@ -21,4 +21,8 @@ class Dock
       data.first.add_hour
     end
   end
+
+  def return(boat)
+    boat.returned
+  end
 end
